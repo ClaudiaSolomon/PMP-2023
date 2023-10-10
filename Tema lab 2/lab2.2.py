@@ -31,6 +31,7 @@ w_samples_with_latency = w_samples + latency_samples
 
 timp = p1*x_samples_with_latency+p2*y_samples_with_latency+p3*z_samples_with_latency+p4*w_samples_with_latency
 X3 = np.mean(timp> 3)
+print(X3)
 az.plot_posterior({'X':timp})
 plt.show()
 
