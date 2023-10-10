@@ -1,6 +1,6 @@
-# PMP-2022
+# PMP-2023
 ## Instalare
-Trebuie instalat o versiune de Python >3.8 (https://www.python.org/downloads/)
+Trebuie instalat o versiune de Python >3.8. Recomandat 3.10.7. (https://www.python.org/downloads/)
 
 Pentru instalarea librariilor necesare, porniti de la lista din requirements.txt
 ```
