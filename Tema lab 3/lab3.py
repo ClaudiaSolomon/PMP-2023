@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 #I=incendiu, C=cutremur, A=alarma
-
+#1
 model = BayesianNetwork([('C', 'I'), ('C', 'A'),('I','A')])
 
 cpd_c = TabularCPD(variable='C', variable_card=2, values=[[0.9995], [0.0005]]) 
@@ -25,11 +25,11 @@ cpd_a = TabularCPD(variable='A', variable_card=2,
 model.add_cpds(cpd_c, cpd_i, cpd_a)
 assert model.check_model()
 
-#b
+#2
 inference = VariableElimination(model)
 probability = inference.query(variables=['C'], evidence={'A': 1})
 print(probability)
 
-#c
+#3
 probability = inference.query(variables=['I'], evidence={'A': 0})
 print(probability)
