@@ -15,5 +15,8 @@ if __name__ == '__main__':
 
 
 #2
-- cu cat Y creste cu atat distributia lui n se modifica deoarece ea reprezinta frecventa cumpararilor a unui anumit nr de clienti
-- theta afecteaza estimarea nr total de clienti
+
+- cu cat Y este mai mare cu atat estimarea nr total de clienti este mai buna (mai multe observatii => distributia se va concentra in jurul valorii mai mari)
+- daca Y este mic distributia pentru poate avea o medie mai mica (mai putini vizitatori)
+- daca theta este mare, distributia pentru n reflecta o estimare mai mare a nr de clienti ce pot cumpara
+- daca theta este mic ar putea duce la o distributie pentru n cu medie mai mica (se asteapta o frecventa mai mica a clientilor)
