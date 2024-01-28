@@ -53,3 +53,29 @@ waic_results = az.waic(idata, pointwise=True, scale="deviance")
 loo_results = az.loo(idata)
 
 print("WAIC:", waic_results, "\nLOO:",loo_results)
+
+# #2
+#     mix = np.array(mix)
+
+#     clusters = [2, 3, 4]
+#     models = []
+#     idatas = []
+#     for cluster in clusters:
+#         with pm.Model() as model:
+#             p = pm.Dirichlet('p', a=np.ones(cluster))
+#             means = pm.Normal('means',
+#                             mu=np.linspace(mix.min(), mix.max(), cluster),
+#                             sigma=10, shape=cluster,
+#                             transform=pm.distributions.transforms.ordered)
+#             sd = pm.HalfNormal('sd', sigma=100)
+#             y = pm.NormalMixture('y', w=p, mu=means, sigma=sd, observed=mix)
+#             idata = pm.sample(2000, tune=2000, target_accept=0.9, random_seed=123, return_inferencedata=True)
+#         idatas.append(idata)
+#         models.append(model)
+
+#     #3
+#     comp_waic = az.compare(dict(zip([str(c) for c in clusters], idatas)), method='BB-pseudo-BMA', ic="waic", scale="deviance")
+#     comp_loo = az.compare(dict(zip([str(c) for c in clusters], idatas)), method='BB-pseudo-BMA', ic="loo", scale="deviance")
+
+#     az.plot_compare(comp_waic)
+#     az.plot_compare(comp_loo)

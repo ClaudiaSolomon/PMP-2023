@@ -82,6 +82,14 @@ if __name__ == '__main__':
     print(f"Intervalul de 90% HDI pentru prețul de vânzare simulat de 5000 ori este: "
           f"[{hdi_90_simulated[0]:.2f}, {hdi_90_simulated[1]:.2f}]")
     
+    # x1_nou = 33
+    # x2_nou = np.log(540)
+    # miu_nou = trace['alfa_tmp'] + trace['beta1']*x1_nou + trace['beta2']*x2_nou
+
+    # pret_asteptat = np.random.choice(miu_nou, size=5000)
+    # hdi = az.hdi(pret_asteptat, hdi_prob=0.9)
+    # print("Intervalul de 90% HDI pentru prețul așteptat este:", hdi)
+    
 #5
     ppc = pm.sample_posterior_predictive(idata, model=model_regression)
     posterior_predictive = ppc['y_pred']
