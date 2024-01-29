@@ -8,7 +8,7 @@ def posterior_grid(grid_points=50, heads_obtinut_la_aruncarea=20):
     grid = np.linspace(0, 1, grid_points)
     prior = np.repeat(1/5*heads_obtinut_la_aruncarea, grid_points)
     #probabilitatea de a obtine o stema e 1/5^a
-    likelihood = stats.geom.pmf(5, heads_obtinut_la_aruncarea)
+    likelihood = stats.geom.pmf(5, heads_obtinut_la_aruncarea,grid)
     #n=5
     posterior = likelihood * prior
     posterior /= posterior.sum()
